@@ -35,6 +35,7 @@ public class SampleTest {
 		System.out.println("/***************************************/");
 		System.out.println("Java jar with Maven Dependencies");
 		
+		
 		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		//System.setProperty("webdriver.chrome.driver", "/Users/srikanth/Documents/workspace/CBAFramework/src/main/resources/chromedriver");
 		
@@ -50,6 +51,7 @@ public class SampleTest {
 			System.out.println("Fail");
 		}
 		driver.quit();
+		System.out.println("/***************************************/");
 	}
 /*	public class MainOne {
     public static void main(String[] args) {
