@@ -21,11 +21,7 @@ public class CreateInstance
 	
 	public  void createInstance(String instance_id){
 		
-		BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIAJCAH52HV5QH7FPVQ", "1b6dKbHlMO+YNdg4P4nRacaokfAcRzlG9bCjNLjQ");
-    	final AmazonEC2 ec2 = AmazonEC2ClientBuilder.standard()
-    			.withCredentials(new AWSStaticCredentialsProvider(awsCreds))
-    			.withRegion("us-east-2")
-                .build();
+		AmazonEC2 ec2 = buildCred.buildDefaultEC2ClientCredentials();
     	
     	RunInstancesRequest run_request = new RunInstancesRequest()
                 .withImageId(ami_id)
