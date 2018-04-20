@@ -1,1 +1,10 @@
 /target/
+
+/test-output/
+/.settings/
+
+# System files
+.DS_Store
+.classpath
+.gitattributes
+.project
