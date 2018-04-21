@@ -4,6 +4,12 @@
 	<groupId>com.cba</groupId>
 	<artifactId>com.cba.sample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<aws.sdk.version>1.11.314</aws.sdk.version>
+		<selenium.version>3.11.0</selenium.version>
+	</properties>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -45,22 +51,18 @@
 				<inherited>true</inherited>
 				<configuration>
 					<suiteXmlFiles>testng.xml</suiteXmlFiles>
-					<systemPropertyVariables>
-						<maven.home>${maven.home}</maven.home>
-					</systemPropertyVariables>
+					<!-- <systemPropertyVariables> <maven.home>${maven.home}</maven.home> 
+						</systemPropertyVariables> -->
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-
-
-
+	<!--Dependencies -->
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.11.0</version>
+			<version>${selenium.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -68,19 +70,37 @@
 			<version>6.14.3</version>
 		</dependency>
 		<dependency>
-			<groupId>com.amazonaws</groupId>
-			<artifactId>aws-java-sdk</artifactId>
-			<version>1.11.313</version>
-		</dependency>
-		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
+		<!-- <dependency> <groupId>com.amazonaws</groupId> <artifactId>aws-java-sdk</artifactId> 
+			<version>1.11.313</version> </dependency> -->
+		<!-- **************AWS DEPENDENCIES************* -->
 		<dependency>
-			<groupId>org.apache.maven.shared</groupId>
-			<artifactId>maven-invoker</artifactId>
-			<version>3.0.0</version>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-bom</artifactId>
+			<version>${aws.sdk.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-ec2</artifactId>
+			<version>${aws.sdk.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+			<version>${aws.sdk.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-lambda</artifactId>
+			<version>${aws.sdk.version}</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.apache.maven.shared</groupId> <artifactId>maven-invoker</artifactId> 
+			<version>3.0.0</version> </dependency> -->
 	</dependencies>
 </project>

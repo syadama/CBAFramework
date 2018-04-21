@@ -70,8 +70,8 @@ public class StartStopInstance {
 
 	public static void main(String[] args) throws Exception {
 
-		// stopInstance("i-04535f42d02c0474c");
-		stopInstance("i-077bc907d878e50b4");
+		 stopInstance("i-04535f42d02c0474c");
+		//stopInstance("i-077bc907d878e50b4");
 
 		/*
 		 * final String USAGE =
