@@ -41,9 +41,6 @@
         <inherited>true</inherited>
         <configuration>
           <suiteXmlFiles>testng.xml</suiteXmlFiles>
-          <systemPropertyVariables>
-            <maven.home>${maven.home}</maven.home>
-          </systemPropertyVariables>
         </configuration>
       </plugin>
     </plugins>
